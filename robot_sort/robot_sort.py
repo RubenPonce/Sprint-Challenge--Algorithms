@@ -98,25 +98,32 @@ class SortingRobot:
         """
         # Fill this out
         print("robot is running")
-        self.swap_item()
-        def run_through_list():
+        if not self.light_is_on() and not self.can_move_right(): 
+            return
+        else:
+            self.swap_item()
+            self.set_light_off()
             while self.can_move_right():
-                print( self.compare_item(), self._item)
-                if self.compare_item() == -1:
-                    self.swap_item()
                 self.move_right()
-                self.swap_item()
-                self.set_light_off()
-              
-            while self.can_move_left():
-                self.set_light_on()
-                
+                print( self.compare_item(), self._item)
                 if self.compare_item() == 1:
                     self.swap_item()
+                    self.set_light_on()
+
+                
+
+            while not self.compare_item() == None:
                 self.move_left()
-                self.swap_item()
-        while self.light_is_on and not self.compare_item() == 1:    
-            run_through_list()
+            self.swap_item()
+            self.move_right()
+            self.sort()
+
+    
+        
+                
+                            
+
+        
          
             
 
