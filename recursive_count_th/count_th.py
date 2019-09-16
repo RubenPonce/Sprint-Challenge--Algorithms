@@ -33,6 +33,3 @@ def count_th(word):
     # TBC
     
     pass
-
-print(count_th("ththththththththth"))
-print(count_th("ththththththththth"))
