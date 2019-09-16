@@ -97,9 +97,46 @@ class SortingRobot:
         Sort the robot's list.
         """
         # Fill this out
-        pass
+        print("robot is running")
+        self.swap_item()
+        def run_through_list():
+            while self.can_move_right():
+                print( self.compare_item(), self._item)
+                if self.compare_item() == -1:
+                    self.swap_item()
+                self.move_right()
+                self.swap_item()
+                self.set_light_off()
+              
+            while self.can_move_left():
+                self.set_light_on()
+                
+                if self.compare_item() == 1:
+                    self.swap_item()
+                self.move_left()
+                self.swap_item()
+        while self.light_is_on and not self.compare_item() == 1:    
+            run_through_list()
+         
+            
 
 
+                
+
+"""
+[11, 13, 7, 17, 9, 20, 1, 5, 14, 6, 0, 24, 12, 18]
+sorts the list from low to high
+robot receives all methods
+can use iterators
+
+while the robot can move left
+    compare the iterator to the list item
+    if the iterator is less than the current item
+        carry that item to the end of the list
+        move all the way left and repeat moving to the right.
+    
+
+"""
 if __name__ == "__main__":
     # Test our your implementation from the command line
     # with `python robot_sort.py`
