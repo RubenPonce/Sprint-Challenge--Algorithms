@@ -99,7 +99,6 @@ class SortingRobot:
         Sort the robot's list.
         """
         # Fill this out
-        print("robot is running")
         if not self.light_is_on() and not self.can_move_right():
             return
         else:
