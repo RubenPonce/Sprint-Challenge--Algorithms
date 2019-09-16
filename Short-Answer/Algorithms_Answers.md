@@ -17,9 +17,6 @@ for i in n:
 broken_egg_counter = 0 
   if n[i] < f:
     return egg
-
-
-
   else: 
     broken_egg_counter +=1
     return broken_egg
